@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         expenses.forEach(expense => {
             const li = document.createElement('li');
             li.innerHTML = `
-                ${expense.description} - $${expense.amount.toFixed(2)} (${expense.category})
+                ${expense.description} - Rs. ${expense.amount.toFixed(2)} (${expense.category})
                 <div class="actions">
                     <button onclick="editExpense(${expense.id})">Edit</button>
                     <button onclick="deleteExpense(${expense.id})">Delete</button>
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         summaryList.innerHTML = '';
         for (const [category, total] of Object.entries(summary)) {
             const li = document.createElement('li');
-            li.textContent = `${category}: $${total.toFixed(2)}`;
+            li.textContent = `${category}: Rs. ${total.toFixed(2)}`;
             summaryList.appendChild(li);
         }
     }
